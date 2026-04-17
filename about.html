@@ -3,17 +3,615 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mr. Soomro | SEO Agency — Rank Higher</title>
-  <meta name="description" content="Mr. Soomro is Pakistan's leading SEO agency. We deliver On-Page SEO, Technical SEO, Local SEO, Link Building and Content Marketing that generates real revenue. 100+ clients. 91% retention rate.">
-  <meta name="keywords" content="SEO agency Pakistan, On-Page SEO, Technical SEO, Link Building, Local SEO, Content Marketing, SEO services Karachi, Mr Soomro">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#fafaf7">
-  <link rel="canonical" href="https://www.mrSoomro.com/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mr. Soomro SEO Agency","description":"Expert SEO services — On-Page, Technical, Local, Link Building, Content Marketing.","url":"https://www.mrSoomro.com","email":"info@mrSoomro.com","telephone":"+92-300-123-4567","address":{"@type":"PostalAddress","addressLocality":"Karachi","addressCountry":"PK"}}</script>
+  <title>SEO Services - MR Soomro | About us</title>
+  <meta name="description" content="Professional SEO services including keyword research, on-page optimization, link building, and Reddit marketing. Get results-driven SEO that actually works.">
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+  --bg: #fafaf7;
+  --bg2: #f2f0ea;
+  --surface: #ffffff;
+
+  --A: #f97316;
+  --A2: #f59e0b;
+  --A-glow: rgba(249,115,22,0.18);
+
+  --T: #1a1714;
+  --Ts: #7a746d;
+
+  --bdr: rgba(26,23,20,0.1);
+
+  --fd: 'Inter', sans-serif;
+  --fb: 'Crimson Text', serif;
+
+  --ee: cubic-bezier(.16,1,.3,1);
+}
+
+/* SECTION BASE */
+#services {
+  padding: 140px 60px;
+  background: #fb7c00a3;
+  position: relative;
+}
+
+/* HEADER */
+#services .se {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#services .st {
+  font-family: var(--fd);
+  font-size: clamp(48px, 6vw, 96px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: .95;
+  color: var(--T);
+  margin-bottom: 50px;
+}
+
+#services .st em {
+  font-style: normal;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd858 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* GRID */
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* CARD */
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--bdr);
+  border-radius: 24px;
+  padding: 42px;
+  position: relative;
+  overflow: hidden;
+  transition: all .35s var(--ee);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOP ACCENT LINE */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--A), var(--A2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s var(--ee);
+}
+
+/* HOVER */
+.service-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(249,115,22,0.3);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12),
+              0 0 40px var(--A-glow);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* NUMBER */
+.service-number {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--fd);
+  font-size: 48px;
+  font-weight: 800;
+  color: rgb(255 104 0);
+  line-height: 1;
+}
+
+/* ICON */
+.service-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: rgba(249,115,22,0.08);
+  border: 1px solid rgba(249,115,22,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  transition: all .3s var(--ee);
+}
+
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, var(--A), var(--A2));
+  box-shadow: 0 12px 35px var(--A-glow);
+  transform: scale(1.05);
+}
+
+.service-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--A);
+  stroke-width: 1.8;
+  fill: none;
+  transition: all .3s;
+}
+
+.service-card:hover .service-icon svg {
+  stroke: #fff;
+  transform: scale(1.1);
+}
+
+/* TITLE */
+.service-card h3 {
+  font-family: var(--fd);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--T);
+  letter-spacing: .02em;
+  line-height: 1.3;
+}
+
+/* TEXT */
+.service-card p {
+  font-size: 15px;
+  color: var(--Ts);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+/* LINK */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--A);
+  transition: all .3s var(--ee);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.service-link:hover {
+  color: var(--A2);
+  gap: 16px;
+  transform: translateX(4px);
+}
+
+/* REVEAL */
+.rv {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all .7s var(--ee);
+}
+
+.rv.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO ALIGNMENT */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  background: var(--bg);
+  padding: 80px 60px;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hcnt {
+  text-align: left;
+  max-width: 100%;
+}
+
+/* HERO VISUAL */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.visual-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.visual-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.visual-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(245,158,11,0.05) 100%);
+  pointer-events: none;
+}
+
+.visual-card {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--bdr);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
+  transition: all .3s var(--ee);
+}
+
+.visual-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  border-color: rgba(249,115,22,0.3);
+}
+
+.card-1 {
+  top: 20px;
+  right: -20px;
+  transform: rotate(3deg);
+}
+
+.card-2 {
+  bottom: 40px;
+  left: -15px;
+  transform: rotate(-2deg);
+}
+
+
+.card-icon {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--A);
+  margin-bottom: 4px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--Ts);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.hh1 {
+  font-family: var(--fd);
+  font-size: clamp(64px, 10vw, 160px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-bottom: 30px;
+}
+
+.hh1 .ln {
+  display: block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: lu .9s var(--ee) forwards;
+}
+
+.hh1 .ln:nth-child(1) { animation-delay: .3s }
+.hh1 .ln:nth-child(2) { animation-delay: .45s; background: linear-gradient(135deg,var(--A) 0%,var(--A2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text }
+.hh1 .ln:nth-child(3) { animation-delay: .6s }
+.hh1 .ln:nth-child(4) { animation-delay: .75s }
+
+@keyframes lu { to{opacity:1;transform:translateY(0)} }
+
+.hsub {
+  color: var(--Ts);
+  max-width: 800px;
+  margin: 0 0 40px 0;
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fu .8s var(--ee) .85s forwards;
+}
+
+@keyframes fu { to{opacity:1;transform:translateY(0)} }
+
+.hpill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--A);
+  background: rgba(249,115,22,.08);
+  border: 1px solid rgba(249,115,22,.25);
+  padding: 8px 18px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fu .8s var(--ee) .2s forwards;
+}
+
+.hpill .pd {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--A);
+  animation: dp 1.5s ease-in-out infinite;
+}
+
+@keyframes dp { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:.4} }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-visual {
+    height: 400px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-visual {
+    height: 350px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .visual-card {
+    padding: 12px 16px;
+  }
+
+  .card-1 {
+    top: 10px;
+    right: -10px;
+  }
+
+  .card-2 {
+    bottom: 20px;
+    left: -10px;
+  }
+
+  .card-3 {
+    right: -20px;
+  }
+
+  .hh1 {
+    font-size: clamp(48px, 12vw, 120px);
+    margin-bottom: 25px;
+  }
+
+  .hsub {
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  .hpill {
+    font-size: 10px;
+    padding: 6px 14px;
+    margin-bottom: 25px;
+  }
+
+  #services {
+    padding: 100px 20px;
+  }
+
+  .services-container {
+    padding: 0;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-card {
+    padding: 32px 28px;
+    min-height: 280px;
+  }
+
+  #services .st {
+    font-size: 38px;
+    margin-bottom: 40px;
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+  }
+
+  .service-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .service-number {
+    font-size: 40px;
+    top: 16px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 40px 16px;
+  }
+
+  .hero-container {
+    gap: 30px;
+  }
+
+  .hero-visual {
+    height: 300px;
+    max-width: 400px;
+  }
+
+  .visual-card {
+    padding: 10px 14px;
+  }
+
+  .card-1 {
+    top: 5px;
+    right: -5px;
+  }
+
+  .card-2 {
+    bottom: 15px;
+    left: -5px;
+  }
+
+  .card-3 {
+    right: -15px;
+  }
+
+  .card-icon {
+    font-size: 18px;
+  }
+
+  .card-label {
+    font-size: 10px;
+  }
+
+  .hh1 {
+    font-size: clamp(40px, 14vw, 100px);
+    margin-bottom: 20px;
+  }
+
+  .hsub {
+    font-size: 15px;
+    max-width: 500px;
+  }
+
+  .hpill {
+    font-size: 9px;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+  }
+
+  #services {
+    padding: 80px 16px;
+  }
+
+  .service-card {
+    padding: 28px 24px;
+  }
+
+  #services .st {
+    font-size: 32px;
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .service-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+  }
+}
+
+
+.sizeicon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--A); /* your accent color */
+}
+
+.sizeicon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+}
+  </style>
 </head>
 <body>
 
@@ -28,112 +626,19 @@
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <!-- MOBILE NAV -->
-  <div class="mnav" id="mobNav">
-    <a href="#hero" onclick="closeMob()">Home</a>
-    <a href="about.html" onclick="closeMob()">About</a>
-    <a href="services.html" onclick="closeMob()">Services</a>
-    <a href="#process" onclick="closeMob()">Process</a>
-    <a href="blogs.html" onclick="closeMob()">Blog</a>
-    <a href="#testimonials" onclick="closeMob()">Reviews</a>
-    <a href="#contact" onclick="closeMob()">Contact</a>
-  </div>
-
   <!-- NAVBAR -->
   <nav id="mainNav">
-    <a href="#hero" class="nlogo">MR<span class="dot">.</span>Soomro<span class="tag">SEO</span></a>
+    <a href="index.html#hero" class="nlogo">MR<span class="dot">.</span>Soomro<span class="tag">SEO</span></a>
     <ul class="nlinks">
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="blogs.html">Blog</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#contact" class="ncta">Free SEO Audit</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="index.html#contact" class="ncta">Free SEO Audit</a></li>
     </ul>
-    <button class="nbg" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div id="heroLines" aria-hidden="true"></div>
-    <div class="hblob" aria-hidden="true"></div>
-    <div class="hero-particles" aria-hidden="true" id="heroParticles"></div>
-
-    <div class="hero-container">
-      <!-- Left -->
-      <div class="hcnt">
-        <div class="hpill"><span class="pd"></span>Results-Driven SEO &amp; Reddit Growth That Actually Works &middot; Est. 2016</div>
-        <h1 class="hh1">
-          <span class="ln">RANK</span>
-          <span class="ln">HIGHER.</span>
-          <span class="ln">GROW FASTER.</span>
-        </h1>
-        <p class="hsub">We help brands control their online reputation, remove harmful content, and generate real traffic using advanced Reddit and backlink strategies. Everything we do is strategy-first with proven systems that work right now.</p>
-
-        <div class="hero-trust">
-          <div class="trust-item"><span class="trust-num">100+</span><span class="trust-label">Clients Served</span></div>
-          <div class="trust-item"><span class="trust-num">91%</span><span class="trust-label">Retention Rate</span></div>
-          <div class="trust-item"><span class="trust-num">8+</span><span class="trust-label">Years Experience</span></div>
-        </div>
-
-        <div class="hacts">
-          <a href="#contact" class="bblu">Get Free SEO Audit</a>
-          <a href="services.html" class="bout">View Services</a>
-        </div>
-
-        <div class="hero-proof">
-          <div class="proof-avatars">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Client" />
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face" alt="Client" />
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face" alt="Client" />
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Client" />
-            <div class="proof-more">+96</div>
-          </div>
-          <div class="proof-text">
-            <div class="proof-stars">★★★★★</div>
-            <span>Trusted by 100+ businesses</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Visual -->
-      <div class="hero-visual" aria-hidden="true">
-        <div class="visual-main">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="SEO Dashboard" />
-          <div class="visual-glow"></div>
-        </div>
-        <div class="visual-card card-1">
-          <div class="card-icon">📈</div>
-          <div class="card-text"><span class="card-num">+287%</span><span class="card-label">Organic Traffic</span></div>
-        </div>
-        <div class="visual-card card-2">
-          <div class="card-icon">🎯</div>
-          <div class="card-text"><span class="card-num">#1</span><span class="card-label">Google Ranking</span></div>
-        </div>
-        <div class="visual-card card-3">
-          <div class="card-icon">💎</div>
-          <div class="card-text"><span class="card-num">50+</span><span class="card-label">5-Star Reviews</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hscr" aria-hidden="true"><span>Scroll</span><div class="sbox"></div></div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="mqw" aria-hidden="true"><div class="mqt" id="mqTrack"></div></div>
-
-  <!-- STATS -->
-  <div class="stbar">
-    <div class="stg">
-      <div class="rv zm"><div class="stnum" data-target="100">0<span>+</span></div><div class="stlbl">Happy Clients</div></div>
-      <div class="rv zm"><div class="stnum" data-target="500">0<span>+</span></div><div class="stlbl">Projects Delivered</div></div>
-      <div class="rv zm"><div class="stnum" data-target="95">0<span>%</span></div><div class="stlbl">First-Page Success Rate</div></div>
-      <div class="rv zm"><div class="stnum" data-target="8">0<span>+</span></div><div class="stlbl">Years of Expertise</div></div>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
   <section id="about">
     <div class="abg">
       <div class="abvis rv fl">
@@ -166,24 +671,7 @@
       </div>
     </div>
   </section>
-
-  <!-- EMAIL BAND -->
-  <div class="eband">
-    <div class="ebinn rv">
-      <div class="se" style="justify-content:center;color:rgba(255,255,255,.75)">Free SEO Proposal</div>
-      <div class="ebtit">Ready to Rank #1 on Google?</div>
-      <p class="ebsub">Enter your email and we will send you a personalised, no-obligation SEO audit — showing exactly what is holding your site back from page one. Trusted by 100+ businesses.</p>
-      <div class="ebfrm">
-        <input type="email" class="ebinp" id="ebEmail" placeholder="Enter your email address or website URL">
-        <button class="ebbtn" onclick="handleEB()">Get Free Audit</button>
-      </div>
-      <div id="ebMsg" style="display:none;font-size:13px;margin-top:12px;font-weight:600;color:#fff"></div>
-      <p class="ebnote">No spam. No commitment. Your data is safe. Trusted by 100+ businesses across Pakistan, the UK and UAE.</p>
-    </div>
-  </div>
-
-  <!-- WHY US -->
-  <div class="whys">
+<div class="whys">
     <div style="max-width:1200px;margin:0 auto;text-align:center">
       <div class="se rv" style="justify-content:center">Why Choose Us</div>
       <h2 class="st rv" style="text-align:center">Numbers That <em>Speak</em></h2>
@@ -212,6 +700,15 @@
       </div>
     </div>
   </div>
+
+  
+
+
+
+
+
+
+
 
   <!-- PROCESS -->
   <section id="process">
@@ -422,6 +919,7 @@
     </div>
   </section>
 
+
   <!-- FOOTER -->
   <footer itemscope itemtype="https://schema.org/Organization">
     <div class="ftt">
@@ -456,81 +954,274 @@
   </footer>
 
   <script>
-    emailjs.init("hnD6svOG9ul9LoBqK");
-
-    document.getElementById("fSub").addEventListener("click", function(e) {
-      e.preventDefault();
-      const btn = this, msgBox = document.getElementById("fMsg");
-      const data = { first_name:document.getElementById("fn").value.trim(), last_name:document.getElementById("ln").value.trim(), email:document.getElementById("fe").value.trim(), phone:document.getElementById("fp").value.trim(), website:document.getElementById("fw").value.trim(), service:document.getElementById("fs").value.trim(), message:document.getElementById("fb2").value.trim() };
-      if (!data.first_name || !data.email || !data.message) { msgBox.style.display="block"; msgBox.style.color="red"; msgBox.textContent="❌ Please fill all required fields."; return; }
-      btn.disabled=true; btn.querySelector("span").textContent="Sending...";
-      emailjs.send("service_0vyg0cj","template_3fdrhag",data)
-        .then(()=>{ msgBox.style.display="block"; msgBox.style.color="var(--A)"; msgBox.textContent="✅ Message sent successfully!"; ["fn","ln","fe","fp","fw"].forEach(id=>document.getElementById(id).value=''); document.getElementById("fs").selectedIndex=0; document.getElementById("fb2").value=''; btn.disabled=false; btn.querySelector("span").textContent="Send Message & Get Free Audit"; })
-        .catch(()=>{ msgBox.style.display="block"; msgBox.style.color="red"; msgBox.textContent="❌ Failed to send. Try again."; btn.disabled=false; btn.querySelector("span").textContent="Send Message & Get Free Audit"; });
-    });
-
     /* CURSOR */
-    const dot = document.querySelector('.cursor-dot'), ring = document.querySelector('.cursor-ring');
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+
     if (dot && ring && window.matchMedia('(hover: hover)').matches) {
-      let mouse={x:0,y:0}, ringPos={x:0,y:0}, ease=.12;
-      document.addEventListener('mousemove',e=>{ mouse.x=e.clientX; mouse.y=e.clientY; dot.style.left=mouse.x+'px'; dot.style.top=mouse.y+'px'; });
-      (function animate(){ ringPos.x+=(mouse.x-ringPos.x)*ease; ringPos.y+=(mouse.y-ringPos.y)*ease; ring.style.left=ringPos.x+'px'; ring.style.top=ringPos.y+'px'; requestAnimationFrame(animate); })();
-      document.querySelectorAll('a,button,input,textarea,select,[role="button"]').forEach(el=>{ el.addEventListener('mouseenter',()=>{ ring.classList.add('hover'); dot.classList.add('hover'); }); el.addEventListener('mouseleave',()=>{ ring.classList.remove('hover'); dot.classList.remove('hover'); }); });
-      document.addEventListener('mousedown',()=>{ dot.classList.add('clicking'); ring.classList.add('clicking'); });
-      document.addEventListener('mouseup',()=>{ dot.classList.remove('clicking'); ring.classList.remove('clicking'); });
+      let mouse = { x: 0, y: 0 };
+      let ringPos = { x: 0, y: 0 };
+      let ease = 0.12;
+
+      document.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        dot.style.left = mouse.x + 'px';
+        dot.style.top = mouse.y + 'px';
+      });
+
+      function animate() {
+        ringPos.x += (mouse.x - ringPos.x) * ease;
+        ringPos.y += (mouse.y - ringPos.y) * ease;
+        ring.style.left = ringPos.x + 'px';
+        ring.style.top = ringPos.y + 'px';
+        requestAnimationFrame(animate);
+      }
+
+      animate();
     }
 
     /* NAV */
-    window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scr',scrollY>60));
-    function closeMob(){ document.getElementById('mobNav').classList.remove('open') }
-    document.getElementById('burger').addEventListener('click',function(){ this.classList.toggle('open'); document.getElementById('mobNav').classList.toggle('open'); });
+    const mainNav = document.getElementById('mainNav');
+    if (mainNav) {
+      window.addEventListener('scroll',()=>mainNav.classList.toggle('scr',scrollY>60));
+    }
+
+    const burger = document.getElementById('burger');
+    const mobNav = document.getElementById('mobNav');
+    
+    if (burger && mobNav) {
+      burger.addEventListener('click',function(){ 
+        this.classList.toggle('open'); 
+        mobNav.classList.toggle('open'); 
+      });
+    }
+
+    function closeMob(){ 
+      if (mobNav) mobNav.classList.remove('open'); 
+    }
 
     /* HERO LINES */
-    const hl=document.getElementById('heroLines');
-    hl.style.cssText='position:absolute;inset:0;display:flex;justify-content:space-between;pointer-events:none;z-index:1';
-    for(let i=0;i<12;i++){ const s=document.createElement('span'); s.style.cssText='display:block;width:1px;background:linear-gradient(180deg,transparent,rgba(249,115,22,.06) 30%,rgba(249,115,22,.06) 70%,transparent)'; hl.appendChild(s); }
+    const hl = document.getElementById('heroLines');
+    if (hl) {
+      hl.style.cssText='position:absolute;inset:0;display:flex;justify-content:space-between;pointer-events:none;z-index:1';
+      for(let i=0;i<12;i++){ 
+        const s=document.createElement('span'); 
+        s.style.cssText='display:block;width:1px;background:linear-gradient(180deg,transparent,rgba(249,115,22,.06) 30%,rgba(249,115,22,.06) 70%,transparent)'; 
+        hl.appendChild(s); 
+      }
+    }
 
     /* PARTICLES */
-    const pc=document.getElementById('heroParticles');
-    for(let i=0;i<18;i++){ const p=document.createElement('span'); p.style.left=Math.random()*100+'%'; p.style.animationDelay=Math.random()*15+'s'; p.style.animationDuration=(10+Math.random()*10)+'s'; pc.appendChild(p); }
+    const pc = document.getElementById('heroParticles');
+    if (pc) {
+      for(let i=0;i<18;i++){ 
+        const p=document.createElement('span'); 
+        p.style.left=Math.random()*100+'%'; 
+        p.style.animationDelay=Math.random()*15+'s'; 
+        p.style.animationDuration=(10+Math.random()*10)+'s'; 
+        pc.appendChild(p); 
+      }
+    }
 
     /* MARQUEE */
-    const words=['On-Page SEO','Technical SEO','Link Building','Local SEO','Content Marketing','eCommerce SEO','AI SEO and GEO','Keyword Research','SEO Audits','Domain Authority'];
-    const mq=document.getElementById('mqTrack');
-    [...words,...words,...words,...words].forEach(w=>{ const d=document.createElement('div'); d.className='mqi'; d.textContent=w; mq.appendChild(d); });
+    const mq = document.getElementById('mqTrack');
+    if (mq) {
+      const words=['On-Page SEO','Technical SEO','Link Building','Local SEO','Content Marketing','eCommerce SEO','AI SEO and GEO','Keyword Research','SEO Audits','Domain Authority'];
+      [...words,...words,...words,...words].forEach(w=>{ 
+        const d=document.createElement('div'); 
+        d.className='mqi'; 
+        d.textContent=w; 
+        mq.appendChild(d); 
+      });
+    }
 
     /* CLIENTS */
-    const cls=['TechSpark','NexusGroup','BloomBoutique','FinanceWiz','ZB Clinic','RetailPlus','DigitalEdge','GrowthHQ','SkyMedia','RankBoost','ClickCo','WebElite','ProRank','SearchX'];
-    const ct=document.getElementById('clTrack');
-    [...cls,...cls,...cls].forEach(n=>{ const el=document.createElement('div'); el.className='cll'; el.textContent=n; ct.appendChild(el); });
+    const ct = document.getElementById('clTrack');
+    if (ct) {
+      const cls=['TechSpark','NexusGroup','BloomBoutique','FinanceWiz','ZB Clinic','RetailPlus','DigitalEdge','GrowthHQ','SkyMedia','RankBoost','ClickCo','WebElite','ProRank','SearchX'];
+      [...cls,...cls,...cls].forEach(n=>{ 
+        const el=document.createElement('div'); 
+        el.className='cll'; 
+        el.textContent=n; 
+        ct.appendChild(el); 
+      });
+    }
 
     /* SCROLL REVEAL */
-    const obs=new IntersectionObserver(entries=>{ entries.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('vis'),i*80); obs.unobserve(e.target); } }); },{threshold:.1,rootMargin:'0px 0px -34px 0px'});
+    const obs=new IntersectionObserver(entries=>{ 
+      entries.forEach((e,i)=>{ 
+        if(e.isIntersecting){ 
+          setTimeout(()=>e.target.classList.add('vis'),i*80); 
+          obs.unobserve(e.target); 
+        } 
+      }); 
+    },{threshold:.1,rootMargin:'0px 0px -34px 0px'});
     document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
     /* STAT COUNTERS */
-    function animN(el,tg,sf,dur=1800){ const s=performance.now(); (function t(now){ const p=Math.min((now-s)/dur,1),e2=1-Math.pow(1-p,3); el.innerHTML=Math.round(tg*e2)+'<span>'+sf+'</span>'; if(p<1) requestAnimationFrame(t); })(s); }
-    const sObs=new IntersectionObserver(e=>{ if(e[0].isIntersecting){ document.querySelectorAll('[data-target]').forEach(el=>{ const t=parseInt(el.dataset.target),sp=el.querySelector('span')?.textContent||''; animN(el,t,sp); }); sObs.unobserve(e[0].target); } },{threshold:.3});
-    const sb=document.querySelector('.stbar'); if(sb) sObs.observe(sb);
+    function animN(el,tg,sf,dur=1800){ 
+      const s=performance.now(); 
+      (function t(now){ 
+        const p=Math.min((now-s)/dur,1),e2=1-Math.pow(1-p,3); 
+        el.innerHTML=Math.round(tg*e2)+'<span>'+sf+'</span>'; 
+        if(p<1) requestAnimationFrame(t); 
+      })(s); 
+    }
+    
+    const sObs=new IntersectionObserver(e=>{ 
+      if(e[0].isIntersecting){ 
+        document.querySelectorAll('[data-target]').forEach(el=>{ 
+          const t=parseInt(el.dataset.target),sp=el.querySelector('span')?.textContent||''; 
+          animN(el,t,sp); 
+        }); 
+        sObs.unobserve(e[0].target); 
+      } 
+    },{threshold:.3});
+    
+    const sb=document.querySelector('.stbar'); 
+    if(sb) sObs.observe(sb);
 
     /* TESTIMONIALS */
-    const slides=document.querySelectorAll('.tsl'); let cur=0;
-    const dw=document.getElementById('tcDots');
-    slides.forEach((_,i)=>{ const d=document.createElement('div'); d.className='tdt'+(i===0?' act':''); d.addEventListener('click',()=>goTo(i)); dw.appendChild(d); });
-    function goTo(n){ slides[cur].classList.remove('act'); document.querySelectorAll('.tdt')[cur].classList.remove('act'); cur=(n+slides.length)%slides.length; slides[cur].classList.add('act'); document.querySelectorAll('.tdt')[cur].classList.add('act'); }
-    document.getElementById('tcPrev').addEventListener('click',()=>goTo(cur-1));
-    document.getElementById('tcNext').addEventListener('click',()=>goTo(cur+1));
-    setInterval(()=>goTo(cur+1),6000);
+    const slides=document.querySelectorAll('.tsl'); 
+    if (slides.length > 0) {
+      let cur=0;
+      const dw=document.getElementById('tcDots');
+      if (dw) {
+        slides.forEach((_,i)=>{ 
+          const d=document.createElement('div'); 
+          d.className='tdt'+(i===0?' act':''); 
+          d.addEventListener('click',()=>goTo(i)); 
+          dw.appendChild(d); 
+        });
+      }
+      
+      function goTo(n){ 
+        slides[cur].classList.remove('act'); 
+        document.querySelectorAll('.tdt')[cur].classList.remove('act'); 
+        cur=(n+slides.length)%slides.length; 
+        slides[cur].classList.add('act'); 
+        document.querySelectorAll('.tdt')[cur].classList.add('act'); 
+      }
+      
+      const tcPrev = document.getElementById('tcPrev');
+      const tcNext = document.getElementById('tcNext');
+      
+      if (tcPrev) tcPrev.addEventListener('click',()=>goTo(cur-1));
+      if (tcNext) tcNext.addEventListener('click',()=>goTo(cur+1));
+      setInterval(()=>goTo(cur+1),6000);
+    }
 
     /* EMAIL BAND */
-    function handleEB(){ const v=document.getElementById('ebEmail').value.trim(),m=document.getElementById('ebMsg'); if(!v){ m.style.cssText='display:block;color:#fff;background:rgba(0,0,0,.2);padding:8px 14px;border-radius:8px'; m.textContent='Please enter your email or website URL.'; return; } m.style.cssText='display:block;color:#fff;font-weight:600'; m.textContent="Thank you. We will send your free SEO audit within 24 hours."; document.getElementById('ebEmail').value=''; }
+    function handleEB(){ 
+      const ebEmail = document.getElementById('ebEmail');
+      const ebMsg = document.getElementById('ebMsg');
+      if (!ebEmail || !ebMsg) return;
+      
+      const v=ebEmail.value.trim();
+      if(!v){ 
+        ebMsg.style.cssText='display:block;color:#fff;background:rgba(0,0,0,.2);padding:8px 14px;border-radius:8px'; 
+        ebMsg.textContent='Please enter your email or website URL.'; 
+        return; 
+      } 
+      ebMsg.style.cssText='display:block;color:#fff;font-weight:600'; 
+      ebMsg.textContent="Thank you. We will send your free SEO audit within 24 hours."; 
+      ebEmail.value=''; 
+    }
 
     /* LOADER */
-    window.addEventListener("load",function(){ const loader=document.getElementById('loader'); setTimeout(()=>{ loader.style.opacity='0'; loader.style.transition='opacity 0.5s ease'; setTimeout(()=>loader.style.display='none',500); },1000); });
-    setTimeout(()=>{ const loader=document.getElementById('loader'); loader.style.opacity='0'; loader.style.transition='opacity 0.5s ease'; setTimeout(()=>loader.style.display='none',500); },1000);
+    const loader = document.getElementById('loader');
+    if (loader) {
+      window.addEventListener("load",function(){ 
+        setTimeout(()=>{ 
+          loader.style.opacity='0'; 
+          loader.style.transition='opacity 0.5s ease'; 
+          setTimeout(()=>loader.style.display='none',500); 
+        },1000); 
+      });
+      setTimeout(()=>{ 
+        loader.style.opacity='0'; 
+        loader.style.transition='opacity 0.5s ease'; 
+        setTimeout(()=>loader.style.display='none',500); 
+      },1000);
+    }
 
-    document.getElementById('fs').addEventListener('change',function(){ this.classList.add('fl') });
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{ a.addEventListener('click',e=>{ const t=document.querySelector(a.getAttribute('href')); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); } }); });
+    /* FORM SELECT */
+    const fs = document.getElementById('fs');
+    if (fs) {
+      fs.addEventListener('change',function(){ 
+        this.classList.add('fl'); 
+      });
+    }
+
+    /* SMOOTH SCROLL */
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{ 
+      a.addEventListener('click',e=>{ 
+        const t=document.querySelector(a.getAttribute('href')); 
+        if(t){ 
+          e.preventDefault(); 
+          t.scrollIntoView({behavior:'smooth'}); 
+        } 
+      }); 
+    });
+
+    /* EMAILJS FORM */
+    const fSub = document.getElementById('fSub');
+    if (fSub) {
+      emailjs.init("hnD6svOG9ul9LoBqK");
+      
+      fSub.addEventListener("click", function(e) {
+        e.preventDefault();
+        const btn = this;
+        const msgBox = document.getElementById("fMsg");
+        if (!msgBox) return;
+        
+        const data = { 
+          first_name:document.getElementById("fn")?.value.trim() || '', 
+          last_name:document.getElementById("ln")?.value.trim() || '', 
+          email:document.getElementById("fe")?.value.trim() || '', 
+          phone:document.getElementById("fp")?.value.trim() || '', 
+          website:document.getElementById("fw")?.value.trim() || '', 
+          service:document.getElementById("fs")?.value.trim() || '', 
+          message:document.getElementById("fb2")?.value.trim() || '' 
+        };
+        
+        if (!data.first_name || !data.email || !data.message) { 
+          msgBox.style.display="block"; 
+          msgBox.style.color="red"; 
+          msgBox.textContent="❌ Please fill all required fields."; 
+          return; 
+        }
+        
+        btn.disabled=true; 
+        btn.querySelector("span").textContent="Sending...";
+        
+        emailjs.send("service_0vyg0cj","template_3fdrhag",data)
+          .then(()=>{ 
+            msgBox.style.display="block"; 
+            msgBox.style.color="var(--A)"; 
+            msgBox.textContent="✅ Message sent successfully!"; 
+            ["fn","ln","fe","fp","fw"].forEach(id=>{ 
+              const el = document.getElementById(id); 
+              if (el) el.value=''; 
+            }); 
+            const fsSelect = document.getElementById("fs"); 
+            if (fsSelect) fsSelect.selectedIndex=0; 
+            const fb2 = document.getElementById("fb2"); 
+            if (fb2) fb2.value=''; 
+            btn.disabled=false; 
+            btn.querySelector("span").textContent="Send Message & Get Free Audit"; 
+          })
+          .catch(()=>{ 
+            msgBox.style.display="block"; 
+            msgBox.style.color="red"; 
+            msgBox.textContent="❌ Failed to send. Try again."; 
+            btn.disabled=false; 
+            btn.querySelector("span").textContent="Send Message & Get Free Audit"; 
+          });
+      });
+    }
   </script>
 </body>
 </html>
+
