@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SEO Services - MR Soomro | About us</title>
   <meta name="description" content="Professional SEO services including keyword research, on-page optimization, link building, and Reddit marketing. Get results-driven SEO that actually works.">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="style.css">
   <style>
     :root {
@@ -1164,63 +1166,19 @@
         } 
       }); 
     });
+//email
+     emailjs.init("hnD6svOG9ul9LoBqK");
 
-    /* EMAILJS FORM */
-    const fSub = document.getElementById('fSub');
-    if (fSub) {
-      emailjs.init("hnD6svOG9ul9LoBqK");
-      
-      fSub.addEventListener("click", function(e) {
-        e.preventDefault();
-        const btn = this;
-        const msgBox = document.getElementById("fMsg");
-        if (!msgBox) return;
-        
-        const data = { 
-          first_name:document.getElementById("fn")?.value.trim() || '', 
-          last_name:document.getElementById("ln")?.value.trim() || '', 
-          email:document.getElementById("fe")?.value.trim() || '', 
-          phone:document.getElementById("fp")?.value.trim() || '', 
-          website:document.getElementById("fw")?.value.trim() || '', 
-          service:document.getElementById("fs")?.value.trim() || '', 
-          message:document.getElementById("fb2")?.value.trim() || '' 
-        };
-        
-        if (!data.first_name || !data.email || !data.message) { 
-          msgBox.style.display="block"; 
-          msgBox.style.color="red"; 
-          msgBox.textContent="❌ Please fill all required fields."; 
-          return; 
-        }
-        
-        btn.disabled=true; 
-        btn.querySelector("span").textContent="Sending...";
-        
-        emailjs.send("service_0vyg0cj","template_3fdrhag",data)
-          .then(()=>{ 
-            msgBox.style.display="block"; 
-            msgBox.style.color="var(--A)"; 
-            msgBox.textContent="✅ Message sent successfully!"; 
-            ["fn","ln","fe","fp","fw"].forEach(id=>{ 
-              const el = document.getElementById(id); 
-              if (el) el.value=''; 
-            }); 
-            const fsSelect = document.getElementById("fs"); 
-            if (fsSelect) fsSelect.selectedIndex=0; 
-            const fb2 = document.getElementById("fb2"); 
-            if (fb2) fb2.value=''; 
-            btn.disabled=false; 
-            btn.querySelector("span").textContent="Send Message & Get Free Audit"; 
-          })
-          .catch(()=>{ 
-            msgBox.style.display="block"; 
-            msgBox.style.color="red"; 
-            msgBox.textContent="❌ Failed to send. Try again."; 
-            btn.disabled=false; 
-            btn.querySelector("span").textContent="Send Message & Get Free Audit"; 
-          });
-      });
-    }
+    document.getElementById("fSub").addEventListener("click", function(e) {
+      e.preventDefault();
+      const btn = this, msgBox = document.getElementById("fMsg");
+      const data = { first_name:document.getElementById("fn").value.trim(), last_name:document.getElementById("ln").value.trim(), email:document.getElementById("fe").value.trim(), phone:document.getElementById("fp").value.trim(), website:document.getElementById("fw").value.trim(), service:document.getElementById("fs").value.trim(), message:document.getElementById("fb2").value.trim() };
+      if (!data.first_name || !data.email || !data.message) { msgBox.style.display="block"; msgBox.style.color="red"; msgBox.textContent="❌ Please fill all required fields."; return; }
+      btn.disabled=true; btn.querySelector("span").textContent="Sending...";
+      emailjs.send("service_0vyg0cj","template_3fdrhag",data)
+        .then(()=>{ msgBox.style.display="block"; msgBox.style.color="var(--A)"; msgBox.textContent="✅ Message sent successfully!"; ["fn","ln","fe","fp","fw"].forEach(id=>document.getElementById(id).value=''); document.getElementById("fs").selectedIndex=0; document.getElementById("fb2").value=''; btn.disabled=false; btn.querySelector("span").textContent="Send Message & Get Free Audit"; })
+        .catch(()=>{ msgBox.style.display="block"; msgBox.style.color="red"; msgBox.textContent="❌ Failed to send. Try again."; btn.disabled=false; btn.querySelector("span").textContent="Send Message & Get Free Audit"; });
+    });
   </script>
 </body>
 </html>
